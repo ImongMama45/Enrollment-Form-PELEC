@@ -1,0 +1,22 @@
+<h1 style='text-align:center;'>Subjects</h1> 
+<div style=' position:relative;'>
+    <table style='margin:auto;border: 2px solid black; width:60%;border-collapse:collapse; height:40%; text-align: center; ' >
+        <tr>
+            <th style='border:1px solid black'> Subjects Name  </th>
+            <th style='border:1px solid black'> Grade </th>
+            <th style='border:1px solid black'> Subject's ID </th>
+            <th style='border:1px solid black'> Student Enrolled </th>
+            <th style='border:1px solid black'> Course </th>
+        </tr>
+
+        {% for Each_Subjects in Subjects %}
+            <tr >
+                <td style='border:1px solid black'> {{Each_Subjects.name}} </td>
+                <td style='border:1px solid black'> {{Each_Subjects.grades}} </td>
+                <td style='border:1px solid black'> {{Each_Subjects.subjects_id}}</td>
+                <td style='border:1px solid black'> {{Each_Subjects.student_enrolled}} </td>
+                <td style='border:1px solid black'> {{Each_Subjects.course}} </td>
+            </tr>
+        {%endfor%}
+    </table>
+</div>

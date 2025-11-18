@@ -1,0 +1,22 @@
+<h1 style='text-align:center;'>Students</h1> 
+<div style=' position:relative;'>
+    <table style='margin:auto;border: 2px solid black; width:60%;border-collapse:collapse; height:40%; text-align: center; ' >
+        <tr>
+            <th style='border:1px solid black'> First Name </th>
+            <th style='border:1px solid black'> Last Name </th>
+            <th style='border:1px solid black'> Student ID </th>
+            <th style='border:1px solid black'> Course </th>
+            <th style='border:1px solid black'> Year </th>
+        </tr>
+
+        {% for Each_Students in Student %}
+            <tr >
+                <td style='border:1px solid black'> {{Each_Students.first_name}} </td>
+                <td style='border:1px solid black'> {{Each_Students.last_name}} </td>
+                <td style='border:1px solid black'> {{Each_Students.student_id}}</td>
+                <td style='border:1px solid black'> {{Each_Students.course_enrolled}} </td>
+                <td style='border:1px solid black'> {{Each_Students.year_enrolled}} </td>
+            </tr>
+        {%endfor%}
+    </table>
+</div>

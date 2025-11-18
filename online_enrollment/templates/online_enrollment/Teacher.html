@@ -1,0 +1,22 @@
+<h1 style='text-align:center;'>Teacher</h1> 
+<div style=' position:relative;'>
+    <table style='margin:auto;border: 2px solid black; width:60%;border-collapse:collapse; height:40%; text-align: center; ' >
+        <tr>
+            <th style='border:1px solid black'> Subject's ID </th>
+            <th style='border:1px solid black'> Teacher's Name </th>
+            <th style='border:1px solid black'> Department </th>
+            <th style='border:1px solid black'> Email </th>
+            <th style='border:1px solid black'> Address </th>
+        </tr>
+
+        {% for Each_Teacher in Teacher %}
+            <tr >
+                <td style='border:1px solid black'> {{Each_Teacher.subjects_id}} </td>
+                <td style='border:1px solid black'> {{Each_Teacher.name}} </td>
+                <td style='border:1px solid black'> {{Each_Teacher.department}}</td>
+                <td style='border:1px solid black'> {{Each_Teacher.email}} </td>
+                <td style='border:1px solid black'> {{Each_Teacher.address}} </td>
+            </tr>
+        {%endfor%}
+    </table>
+</div>

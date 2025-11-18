@@ -1,0 +1,22 @@
+<h1 style='text-align:center;'>Course</h1> 
+<div style=' position:relative;'>
+    <table style='margin:auto;border: 2px solid black; width:60%;border-collapse:collapse; height:40%; text-align: center; ' >
+        <tr>
+            <th style='border:1px solid black'> Course Name  </th>
+            <th style='border:1px solid black'> Teacher </th>
+            <th style='border:1px solid black'> Subject</th>
+            <th style='border:1px solid black'> Student Enrolled </th>
+            <th style='border:1px solid black'> Department </th>
+        </tr>
+
+        {% for Each_Course in Courses %}
+            <tr >
+                <td style='border:1px solid black'> {{Each_Course.name}} </td>
+                <td style='border:1px solid black'> {{Each_Course.teachers}} </td>
+                <td style='border:1px solid black'> {{Each_Course.subjects}}</td>
+                <td style='border:1px solid black'> {{Each_Course.student_enrolled}} </td>
+                <td style='border:1px solid black'> {{Each_Course.department}} </td>
+            </tr>
+        {%endfor%}
+    </table>
+</div>
