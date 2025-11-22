@@ -88,6 +88,14 @@
             font-weight: 600;
             font-size: 14px;
         }
+        .message {
+            text-align: center;
+            margin-bottom: 20px;
+            color: green;
+            font-weight: bold;
+            background-color: red;
+            padding: 10px;
+        }
 
         .form-group input,
         .form-group select,
@@ -120,13 +128,13 @@
 <body>
     <h1>GAMBERT UNIVERSITY</h1>
     <div class ='box'>
-        <h2>Register</h2>
 
         {% if messages %}
             {% for message in messages %}
                 <div class="error">{{ message }}</div>
             {% endfor %}
         {% endif %}
+        <h2>Register</h2>
 
         <form  method="post">
         {% csrf_token %}

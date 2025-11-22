@@ -128,15 +128,17 @@ def add_schedule(request):
     return render(request, 'online_enrollment//Schedule_Form.html', {'form': form})
 
 def edit_schedule(request, pk):
+    schedule = get_object_or_404(Schedule, pk=pk)
     if request.method == 'POST':
-        form = Schedule_Form(request.POST)
+        form = Schedule_Form(request.POST, instance=schedule)
         if form.is_valid():
             form.save()
             return redirect('Test_Schedule')
         else:
+
             messages.error(request, "There was an error with your submission.")
     else:
-        form = Schedule_Form() 
+        form = Schedule_Form(instance=schedule) 
     return render(request, 'online_enrollment//Schedule_Edit.html', {'form': form})
 
 # Subjects Forms    
