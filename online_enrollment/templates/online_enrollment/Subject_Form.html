@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Teacher - Gamberts Academy</title>
+    <title>Add Subject - Gamberts Academy</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
@@ -134,13 +134,13 @@
     <div class="main-content">
         <div class="page-header">
             <div style="display: flex; align-items: center; gap: 20px;">
-                <a href="{% url 'Test_Teacher' %}" class="btn-back">
+                <a href="{% url 'Test_Subjects' %}" class="btn-back">
                     <i class="fas fa-arrow-left"></i> Back
                 </a>
                 <div class="page-title">
                     <div>
-                        <h2>Add Teacher</h2>
-                        <p>Fill in the Teacher details below</p>
+                        <h2>Add Subject</h2>
+                        <p>Fill in the Subject details below</p>
                     </div>
                 </div>
             </div>
@@ -151,28 +151,27 @@
                 {% csrf_token %}
                 <div class="form-grid">
                     <div class="form-group">
+                        <label>Subject Name</label>
+                        {{ form.name }}
+                    </div>
+                    <div class="form-group">
                         <label>Subjects ID</label>
                         {{ form.subjects_id }}
                     </div>
                     <div class="form-group">
-                        <label>Teacher Name</label>
-                        {{ form.name }}
-                    </div>
-                    
-                    <div class="form-group">
-                        <label>Department</label>
-                        {{ form.department }}
+                        <label>Grade</label>
+                        {{ form.grades }}
                     </div>
                     <div class="form-group">
-                        <label>Email</label>
-                        {{ form.email }}
+                        <label>Course</label>
+                        {{ form.course }}
                     </div>
                     <div class="form-group full-width">
-                        <label>Teachers Address</label>
-                        {{ form.address }}
+                        <label>Students Enrolled</label>
+                        {{ form.student_enrolled }}
                     </div>
                 </div>
-                <button type="submit"><i class="fas fa-save"></i> Save Teacher</button>
+                <button type="submit"><i class="fas fa-save"></i> Save Subject</button>
             </form>
         </div>
     </div>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Course - Gamberts Academy</title>
+    <title>Edit Subject - Gamberts Academy</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
@@ -56,13 +56,13 @@
     <div class="main-content">
         <div class="page-header">
             <div class="header-left">
-                <a href="{% url 'Test_Course' %}" class="btn-back"><i class="fas fa-arrow-left"></i> Back</a>
+                <a href="{% url 'Test_Subjects' %}" class="btn-back"><i class="fas fa-arrow-left"></i> Back</a>
                 <div class="page-title">
-                    <h2>Edit Course</h2>
-                    <p>Update course information</p>
+                    <h2>Edit Subject</h2>
+                    <p>Update Subject information</p>
                 </div>
             </div>
-            <a href="{% url 'Course_Form' %}" class="btn-add"><i class="fas fa-plus"></i> Add New</a>
+            <a href="{% url 'Subjects_Form' %}" class="btn-add"><i class="fas fa-plus"></i> Add New</a>
         </div>
 
         <div class="box">
@@ -70,20 +70,24 @@
                 {% csrf_token %}
                 <div class="form-grid">
                     <div class="form-group">
-                        <label>Student id</label>
-                        {{ form.student_id }}
+                        <label>Subject Name</label>
+                        {{ form.name }}
                     </div>
                     <div class="form-group">
-                        <label>First Name</label>
-                        {{ form.first_name }}
+                        <label>Subjects ID</label>
+                        {{ form.subjects_id }}
                     </div>
                     <div class="form-group">
-                        <label>Last Name</label>
-                        {{ form.last_name }}
+                        <label>Grade</label>
+                        {{ form.grades }}
                     </div>
                     <div class="form-group">
                         <label>Course</label>
-                        {{ form.course_enrolled }}
+                        {{ form.course }}
+                    </div>
+                    <div class="form-group full-width">
+                        <label>Students Enrolled</label>
+                        {{ form.student_enrolled }}
                     </div>
                 </div>
                 <div class="btn-group">

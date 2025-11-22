@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gamberts Academy - Admin Panel</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #1a1a2e;
+            min-height: 100vh;
+        }
+
+        /* Navbar */
+                .navbar-custom { background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 15px 40px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .brand { display: flex; align-items: center; gap: 12px; }
+        .brand i { font-size: 28px; color: #ffd700; }
+        .navbar-custom h1 { color: white; font-size: 24px; margin: 0; }
+        .navbar-custom a { color: rgba(255,255,255,0.8); text-decoration: none; padding: 10px 20px; border-radius: 8px; transition: 0.3s; }
+        .navbar-custom a:hover { background: rgba(255,255,255,0.1); color: white; }
+        .btn-logout { background: #e74c3c; color: white !important; padding: 10px 25px; border-radius: 25px; }
+
+
+        .btn-logout {
+            background:#e74c3c;
+            color: white !important;
+            padding: 10px 25px;
+            border-radius: 25px;
+            font-weight: 500;
+        }
+
+        .btn-logout:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .welcome-section {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .welcome-section h2 {
+            color: white;
+            font-size: 32px;
+            font-weight: 300;
+            margin-bottom: 10px;
+        }
+
+        .welcome-section h2 span {
+            color: #ffd700;
+            font-weight: 600;
+        }
+
+        .welcome-section p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 16px;
+        }
+
+        /* Navigation Cards */
+        .nav-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+        }
+
+        .nav-cards a{
+            color: white;
+        }
+
+        .nav-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 35px 25px;
+            text-align: center;
+            text-decoration: none;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .nav-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .nav-card:hover::before {
+            opacity: 1;
+        }
+
+        .nav-card i {
+            font-size: 45px;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .nav-card h3 {
+            color: white;
+            font-size: 20px;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .nav-card p {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 14px;
+            margin-top: 8px;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar-custom">
+        <div class="brand">
+            <h1>Gamberts Academy</h1>
+        </div>
+        <div class="nav-links-top">
+            <a href="#"><i class="fas fa-home"></i> Home</a>
+            <a href="#" class="btn-logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="welcome-section">
+            <h2>Welcome, <span>{{ user.username }}</span></h2>
+            <p>Manage your academy from the dashboard below</p>
+        </div>
+
+        <div class="nav-cards">
+            <a href="{% url 'Test_Student' %}" class="nav-card students">
+                <i class="fas fa-user-graduate"></i>
+                <h3>Students</h3>
+                <p>Manage student records</p>
+            </a>
+
+            <a href="{% url 'Test_Teacher' %}" class="nav-card teachers">
+                <i class="fas fa-chalkboard-teacher"></i>
+                <h3>Teachers</h3>
+                <p>Manage faculty members</p>
+            </a>
+
+            <a href="{% url 'Test_Course' %}" class="nav-card courses">
+                <i class="fas fa-book-open"></i>
+                <h3>Courses</h3>
+                <p>View & edit courses</p>
+            </a>
+
+            <a href="{% url 'Test_Subjects' %}" class="nav-card subjects">
+                <i class="fas fa-flask"></i>
+                <h3>Subjects</h3>
+                <p>Manage subjects</p>
+            </a>
+
+            <a href="{% url 'Test_Schedule' %}" class="nav-card schedule">
+                <i class="fas fa-calendar-alt"></i>
+                <h3>Schedule</h3>
+                <p>View class schedules</p>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

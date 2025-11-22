@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <style>
+            
+        body {
+            font-family: Arial;
+            background: #1a1a2e;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+        }
+        .box {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            width: 700px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        h1 {
+            text-align: center;
+            color: #efefef;
+            margin-bottom: 30px;
+        }
+        
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        button {
+            width: 100%;
+            margin: 40px 0 0 0;
+            padding: 12px;
+            background: #29074e;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background: #2575fc;
+        }
+          .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+        .link {
+            text-align: center;
+            margin-top: 15px;
+        }
+        a {
+            color: #6a11cb;
+            text-decoration: none;
+        }
+        ul {
+            color: red;
+            font-size: 12px;
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+            .form-group label {
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: 0.3s;
+            background: white;
+        }
+        p{
+            text-align: center;
+            margin-top: 20px;
+            color: #666;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #6a11cb;
+            box-shadow: 0 0 0 3px rgba(106, 17, 203, 0.1);
+        }
+
+    
+    </style>
+</head>
+<body>
+    <h1>GAMBERT UNIVERSITY</h1>
+    <form class ='box'  method="post">
+        {% csrf_token %}
+        <div class="form-grid">
+            <div class="form-group">
+                <label>Userame</label>
+                {{ form.username }}
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                {{ form.email }}
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                {{ form.password1 }}
+            </div>
+            <div class="form-group">
+                <label>Confirm Password</label>
+                {{ form.password2 }}
+            </div>
+        </div>
+        <button type="submit">Register</button>
+        <p> Already have an account? <a href="{% url 'Logins' %}"> Login</a> </p>
+    </form>
+    
+</body>
+</html>

@@ -56,13 +56,13 @@
     <div class="main-content">
         <div class="page-header">
             <div class="header-left">
-                <a href="{% url 'Test_Course' %}" class="btn-back"><i class="fas fa-arrow-left"></i> Back</a>
+                <a href="{% url 'Test_Schedule' %}" class="btn-back"><i class="fas fa-arrow-left"></i> Back</a>
                 <div class="page-title">
-                    <h2>Edit Course</h2>
-                    <p>Update course information</p>
+                    <h2>Edit Schedule</h2>
+                    <p>Update schedule information</p>
                 </div>
             </div>
-            <a href="{% url 'Course_Form' %}" class="btn-add"><i class="fas fa-plus"></i> Add New</a>
+            <a href="{% url 'Schedule_Form' %}" class="btn-add"><i class="fas fa-plus"></i> Add New</a>
         </div>
 
         <div class="box">
@@ -70,24 +70,28 @@
                 {% csrf_token %}
                 <div class="form-grid">
                     <div class="form-group">
-                        <label>Student id</label>
-                        {{ form.student_id }}
+                        <label>Subject</label>
+                        {{ form.subjects }}
                     </div>
                     <div class="form-group">
-                        <label>First Name</label>
-                        {{ form.first_name }}
+                        <label>Teachers</label>
+                        {{ form.teachers }}
                     </div>
                     <div class="form-group">
-                        <label>Last Name</label>
-                        {{ form.last_name }}
+                        <label>Days</label>
+                        {{ form.days }}
                     </div>
                     <div class="form-group">
+                        <label>Time Slot</label>
+                        {{ form.time_slot }}
+                    </div>
+                    <div class="form-group full-width">
                         <label>Course</label>
-                        {{ form.course_enrolled }}
+                        {{ form.course }}
                     </div>
                 </div>
                 <div class="btn-group">
-                    <button type="submit" class="btn-update"><i class="fas fa-save"></i> Update</button>
+                    <button type="submit" class="btn-update"> Update</button>
                 </div>
             </form>
         </div>

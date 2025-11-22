@@ -70,20 +70,24 @@
                 {% csrf_token %}
                 <div class="form-grid">
                     <div class="form-group">
-                        <label>Student id</label>
-                        {{ form.student_id }}
+                        <label>Course Name</label>
+                        {{ form.name }}
                     </div>
                     <div class="form-group">
-                        <label>First Name</label>
-                        {{ form.first_name }}
+                        <label>Department</label>
+                        {{ form.department }}
                     </div>
                     <div class="form-group">
-                        <label>Last Name</label>
-                        {{ form.last_name }}
+                        <label>Teachers</label>
+                        {{ form.teachers }}
                     </div>
                     <div class="form-group">
-                        <label>Course</label>
-                        {{ form.course_enrolled }}
+                        <label>Subjects</label>
+                        {{ form.subjects }}
+                    </div>
+                    <div class="form-group full-width">
+                        <label>Students Enrolled</label>
+                        {{ form.student_enrolled }}
                     </div>
                 </div>
                 <div class="btn-group">
